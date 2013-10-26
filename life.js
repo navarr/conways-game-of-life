@@ -1,4 +1,13 @@
-var life = new LifeGameBoard(25);
+/**
+ * Settings!
+ * @type {{boardSize: number, loopInterval: number}}
+ */
+var settings = {
+    boardSize: 25,
+    loopInterval: 100
+};
+
+var life = new LifeGameBoard(settings.boardSize);
 var setupTable = function(containerId) {
     var container = document.getElementById(containerId);
     console.log(containerId, container);
@@ -56,7 +65,7 @@ var renderNextBoardDiff = function() {
     }
 };
 var loopTimeout;
-var timeBetweenLoops = 100;
+var timeBetweenLoops = settings.loopInterval;
 var doOneLoop = function() {
     life.iterate();
     life.commit();
