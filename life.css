@@ -1,0 +1,10 @@
+#life-table {
+    border-collapse: collapse;
+}
+#life-table, #life-table td {
+    border: 1px solid black;
+}
+#life-table td {
+    width: 25px;
+    height: 25px;
+}
