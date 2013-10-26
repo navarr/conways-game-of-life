@@ -4,7 +4,8 @@
  */
 var settings = {
     boardSize: 25,
-    loopInterval: 100
+    loopInterval: 100,
+    interactiveDuringLoop: false
 };
 
 var life = new LifeGameBoard(settings.boardSize);
@@ -114,7 +115,7 @@ document.getElementById('startLoop').onclick = function() {
 };
 document.getElementsByTagName('table')[0].addEventListener('click', function(event) {
     var elementClicked = event.toElement;
-    if (canPlace) {
+    if (canPlace || settings.interactiveDuringLoop) {
         var row = parseInt(elementClicked.dataset.row, 10);
         var col = parseInt(elementClicked.dataset.col, 10);
         if (life.getStatus(row, col)) {
